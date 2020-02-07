@@ -53,11 +53,9 @@ public WorkExperience(){
     }
 
     public ArrayList<String> experience(){
-        list.add(company);
         list.add(jobTitle);
-        list.add(startDate);
-        list.add(endDate);
-        list.add(jobDescription);
+        list.add(company+", " + startDate +" - " + endDate);
+        list.add("- " + jobDescription);
 
         return list;
     }

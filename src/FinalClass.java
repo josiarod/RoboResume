@@ -26,6 +26,8 @@ public class FinalClass {
         }
         finalList.append("\n");
 
+        System.out.println("Education");
+        finalList.append("Education\n");
         while(!moreEducation.equalsIgnoreCase("n")) {
             Education education = new Education();
             System.out.println("Please enter degree type(Associate's, Bachelor's, Master's, PhD, etc.): ");
@@ -38,7 +40,7 @@ public class FinalClass {
             education.setGraduationYear(sc.nextLine());
 
 
-            finalList.append("Education\n");
+
             for (String string : education.education()) {
                 finalList.append(string).append("\n");
             }
@@ -53,6 +55,9 @@ public class FinalClass {
 
         }
 
+
+        System.out.println("Work Experience");
+        finalList.append("Experience\n");
         while(!moreExperience.equalsIgnoreCase("n")) {
             WorkExperience experience = new WorkExperience();
             System.out.println("Please enter a company name: ");
@@ -66,7 +71,7 @@ public class FinalClass {
             System.out.println("Please enter at least 1 job description: ");
             experience.setJobDescription(sc.nextLine());
 
-            finalList.append("Experience\n");
+
             for (String string : experience.experience()) {
                 finalList.append(string).append("\n");
             }
@@ -79,26 +84,26 @@ public class FinalClass {
         }
 
 
-
-
-
-                while(skillsCounter < 3) {
+                  System.out.println("Skills");
+                  finalList.append("Skills\n");
+                 while(skillsCounter < 3) {
                     Skills skills = new Skills();
                     System.out.println("Please enter  1 skill: ");
                     skills.setSkillName(sc.nextLine());
                     System.out.println("Please enter proficiency level  (Fundamental, Novice, Intermediate, Advanced, Expert): ");
                     skills.setProficiency(sc.nextLine());
 
-                    finalList.append("Skills\n");
+
                     for (String string : skills.skills()) {
                         finalList.append(string).append("\n");
                     }
 
-                    finalList.append("\n");
+                   // finalList.append("\n");
                     skillsCounter++;
                 }
 
-       while(!moreSkills.equalsIgnoreCase("n")) {
+
+         while(!moreSkills.equalsIgnoreCase("n")) {
            System.out.println("Do you want to enter another skill? y/n");
             moreSkills = sc.nextLine();
             if(moreSkills.equalsIgnoreCase("n")){
@@ -111,7 +116,7 @@ public class FinalClass {
            System.out.println("Please enter proficiency level  (Fundamental, Novice, Intermediate, Advanced, Expert): ");
            skills.setProficiency(sc.nextLine());
 
-           finalList.append("Skills\n");
+           //finalList.append("Skills\n");
            for (String string : skills.skills()) {
                finalList.append(string).append("\n");
            }
@@ -120,11 +125,8 @@ public class FinalClass {
 
        }
 
-
-
-
-        System.out.println("=========================================================================");
-        System.out.println(finalList);
+         System.out.println("=========================================================================");
+         System.out.println(finalList);
 
     }
 }

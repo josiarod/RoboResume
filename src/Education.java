@@ -46,11 +46,8 @@ public class Education {
 
 
     public ArrayList<String> education(){
-        list.add(degreeType);
-        list.add(major);
-        list.add(universityName);
-        list.add(graduationYear);
-
+        list.add(degreeType + " in "+ major +",");
+        list.add(universityName + ", " + graduationYear);
         return list;
     }
 }

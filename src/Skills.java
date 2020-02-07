@@ -26,9 +26,7 @@ public class Skills {
     }
 
     public ArrayList<String> skills(){
-        list.add(skillName);
-        list.add(proficiency);
-
+        list.add(skillName + ", " + proficiency);
         return list;
     }
 
