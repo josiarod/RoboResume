@@ -6,6 +6,7 @@ public class Education {
     private String major;
     private String universityName;
     private String graduationYear;
+    private String more = "y";
 
     public Education(){
 
@@ -42,6 +43,7 @@ public class Education {
     public void setGraduationYear(String graduationYear) {
         this.graduationYear = graduationYear;
     }
+
 
     public ArrayList<String> education(){
         list.add(degreeType);
