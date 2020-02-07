@@ -6,6 +6,29 @@ public class PersonalInformation {
     ArrayList<String> list = new ArrayList<>();
     private String name;
     private String emailAddress;
+    private String phoneNumber;
+
+    public ArrayList<String> getList() {
+        return list;
+    }
+
+    public void setList(ArrayList<String> list) {
+        this.list = list;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        if(isPhoneNumberValid(phoneNumber)) {
+            this.phoneNumber = phoneNumber;
+        }
+
+
+    }
+
+
 
 
 
@@ -48,9 +71,23 @@ public class PersonalInformation {
         return isValid;
     }
 
+    private boolean isPhoneNumberValid(String phoneNumber){
+        boolean isValid = false;
+
+        String expression = "^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$";
+        CharSequence inputStr = phoneNumber;
+        Pattern pattern = Pattern.compile(expression);
+        Matcher matcher = pattern.matcher(inputStr);
+        if(matcher.matches()){
+            isValid = true;
+        }
+        return isValid;
+    }
+
     public ArrayList<String> information(){
         list.add(name);
         list.add(emailAddress);
+        list.add(phoneNumber);
 
         return list;
     }

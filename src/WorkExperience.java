@@ -6,7 +6,21 @@ private String company;
 private String jobTitle;
 private String startDate;
 private String endDate;
-private String jobDescription;
+    ArrayList<String> jobDescription = new ArrayList<String>();
+
+    public ArrayList<String> getList() {
+        return list;
+    }
+
+    public void setList(ArrayList<String> list) {
+        this.list = list;
+    }
+
+    public void setJobDescription(ArrayList<String> jobDescription) {
+        this.jobDescription = jobDescription;
+    }
+
+
 
 public WorkExperience(){
 
@@ -44,18 +58,23 @@ public WorkExperience(){
         this.endDate = endDate;
     }
 
-    public String getJobDescription() {
-        return jobDescription;
-    }
+//    public String getJobDescription() {
+//        return jobDescription;
+//    }
 
-    public void setJobDescription(String jobDescription) {
-        this.jobDescription = jobDescription;
-    }
+//    public void setJobDescription(String jobDescription) {
+//        this.jobDescription = jobDescription;
+//    }
 
     public ArrayList<String> experience(){
         list.add(jobTitle);
         list.add(company+", " + startDate +" - " + endDate);
-        list.add("- " + jobDescription);
+
+        for (String string : jobDescription) {
+            list.add(" - " + string);
+        }
+
+        //list.add(" - " + jobDescription);
 
         return list;
     }
